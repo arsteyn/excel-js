@@ -1,5 +1,26 @@
-$red: red;
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Noto+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;700&display=swap');
+@import "~normalize.css";
 
-body {
-  background-color: $red;
+@import "header";
+@import "formula";
+@import "table";
+@import "toolbar";
+@import "dashboard";
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.excel{
+  position: relative;
+  color: #888;
+  height: 100%;
+  max-width:100%;
+  font-size: .8rem;
 }
