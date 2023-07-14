@@ -75,6 +75,14 @@ class Dom {
     return this
   }
 
+  attr(name, value) {
+    if (value) {
+      this.$el.setAttribute(name, value)
+      return this
+    }
+    return this.$el.getAttribute(name)
+  }
+
   removeClass(className) {
     this.$el.classList.remove(className)
     return this
@@ -102,6 +110,13 @@ class Dom {
       this.$el.style[key] = styles[key]
     })
   }
+
+  getStyles(styles = []) {
+    return styles.reduce((res, s)=> {
+      res[s] = this.$el.style[s]
+      return res
+    }, {})
+  }
 }
 
 export function
@@ -110,11 +125,11 @@ $(selector) {
   return new Dom(selector)
 }
 
-$
-    .create = (tagname, classes = '') => {
-      const el = document.createElement(tagname)
-      if (classes) {
-        el.classList.add(classes)
-      }
-      return $(el)
-    }
+
+$.create = (tagname, classes = '') => {
+  const el = document.createElement(tagname)
+  if (classes) {
+    el.classList.add(classes)
+  }
+  return $(el)
+}
