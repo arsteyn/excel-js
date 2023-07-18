@@ -119,9 +119,8 @@ class Dom {
   }
 }
 
-export function
 
-$(selector) {
+export function $(selector) {
   return new Dom(selector)
 }
 
